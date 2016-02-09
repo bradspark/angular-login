@@ -1,0 +1,144 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?emdwh4');
+	src:url('fonts/icomoon.eot?#iefixemdwh4') format('embedded-opentype'),
+		url('fonts/icomoon.woff?emdwh4') format('woff'),
+		url('fonts/icomoon.ttf?emdwh4') format('truetype'),
+		url('fonts/icomoon.svg?emdwh4#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal; 
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-your-data:before {
+	content: "\e90e";
+}
+.icon-explore:before {
+	content: "\e90d";
+}
+.icon-dashboard:before {
+	content: "\e90c";
+}
+
+.icon-download:before {
+	content: "\e901";
+}
+.icon-pdf:before {
+	content: "\e601";
+}
+
+.icon-table:before {
+	content: "\e600";
+}
+
+.icon-photo:before {
+	content: "\e6bf";
+}
+
+.icon-cash:before {
+	content: "\e68c";
+}
+
+.icon-close:before {
+	content: "\e680";
+}
+
+.icon-angle-up:before {
+	content: "\e802";
+	font-size: 12px;
+}
+
+.icon-angle-down:before {
+	content: "\e801";
+	font-size: 12px;
+}
+
+.icon-user:before {
+	content: "\e605";
+}
+.icon-help:before {
+	content: "\e90f";
+}
+.icon-ticket:before {
+	content: "\e60c";
+}
+
+.icon-star:before {
+	content: "\e611";
+}
+
+.icon-share:before {
+	content: "\e616";
+}
+
+.icon-print:before {
+	content: "\e61f";
+}
+
+.icon-keypad:before {
+	content: "\e645";
+}
+
+.icon-graph3:before {
+	content: "\e64b";
+}
+
+.icon-graph1:before {
+	content: "\e64d";
+}
+
+.icon-graph:before {
+	content: "\e64e";
+}
+
+.icon-box2:before {
+	content: "\e673";
+}
+
+.icon-tools:before {
+	content: "\e60a";
+}
+
+.icon-calendar:before {
+	content: "\e908";
+}
+
+.icon-magnifying-glass-search:before {
+	content: "\e904";
+}
+
+.icon-trash-can:before {
+	content: "\e902";
+}
+
+.icon-report:before {
+	content: "\e903";	
+}
+.icon-bubble-arrow:before {
+	content: "\e905";
+}
+.icon-maintenance:before {
+	content: "\e90a";
+}
+.icon-issue:before {
+	content: "\e909";
+}
+.icon-more:before {
+	content: "\e90b";
+}
+.icon-smiley:before {
+	content: "\e910";
+}
+

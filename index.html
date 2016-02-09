@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="quad-login">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quad Analytix</title>
+  <link rel="shortcut icon" href="img/favicon.png">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+  <link rel="stylesheet" type="text/css" href="/css/fonts-icomoon.css">
+  <link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+<body ng-controller="LoginCtrl">    
+  <div id="login">
+    <div class="login-container" mode="{{mode}}">
+      <img src="/img/logo-blue.png" class="login-logo">
+      <span id="logo-text">Welcome</span>
+
+      <form class="form" name="login-form" ng-submit="login()" ng-if="mode=='login'">
+
+        <input type="email" name="email" required ng-model="data.email" ng-keyup="handleKey($event)" focus-when="isLoginVisible()" placeholder="Email Address">
+        <input type="password" name="password" required ng-model="data.password" ng-keyup="handleKey($event)" placeholder="Password">
+        <div id="forgot-pass" class="link" ng-click="setMode('passwordReset')">Forgot password?</div>
+
+        <div class="form-error">{{status}}</div>
+
+          <input type="submit" class="button right" flavor="primary-rev" value="sign in">
+          <div id="need-help" class="link" ng-click="setMode('loginHelp')">Need help?</div>
+
+      </form>
+
+      <form class="form passwordReset" ng-submit="requestReset()" ng-if="mode=='passwordReset'">
+
+        <p>To reset your password, please enter the email address for your account.</p>
+        <p>We will send you a link to reset your password.</p>
+
+        <label>Email Address<input type="email" required ng-model="data.email"></label>
+
+        <div class="form-error">{{status}}</div>
+
+        
+        <input type="submit" class="button" flavor="primary-rev" value="send">
+        <div class="link back-to-login" ng-click="setMode('login')">back to login</div>
+        
+
+      </form>
+
+      <div ng-if="mode=='passwordReset_done'">
+        <p>Your request has been received.<br><br>You will receive an email with instructions on how to reset your password.</p>
+        <div class="button" flavor="primary-rev" ng-click="setMode('login')">back to login</div>
+      </div>
+
+
+      <form class="form loginHelp" ng-submit="loginHelp()" ng-if="mode=='loginHelp'">
+
+        <p>Please provide some information about the problem you are experiencing so we know how to assist you.</p>
+
+        <label>Email Address<input type="email" required ng-model="data.email"></label>
+
+        <label>How can we help you?<textarea ng-model="data.help" required></textarea></label>
+
+        <br>
+
+        <div class="form-error">{{status}}</div>
+        <input type="submit" class="button" flavor="primary-rev" value="submit">
+        <div class="link back-to-login" ng-click="setMode('login')">back to login</div>
+      </form>
+
+      <div ng-if="mode=='loginHelp_done'">
+        <p>Your help request has been received. We’ll review your request and get back to you as quickly as possible.</p>
+        <div class="button" flavor="primary-rev" ng-click="setMode('login')">back to login</div>
+      </div>
+
+      <div ng-if="mode=='reset'">
+        <h3>Reset your password.</h3>
+
+        <form class="form" ng-submit="resetPassword()">
+
+          <label>Email Address<input type="email" required ng-model="data.email" ng-keyup="handleKey($event)" focus-when="isLoginVisible()"></label>
+
+          <label>New Password<input type="password" required ng-model="data.password" ng-keyup="handleKey($event)"></label>
+
+          <div class="form-error">{{status}}</div>
+
+          <input type="submit" class="button" flavor="primary-rev" value="Reset Your Pasword">
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <div id="footer"><span id="footer-text" class="ng-scope"> ©2016 Brad Spark. All Rights Reserved.</span>
+<span class="footer-version ng-binding ng-scope" ng-bind="homeCtrl.version.version" ng-click="homeCtrl.reportVersion()"></span></div>
+
+  <script src="/lib/angular.js"></script>
+  <script src="/lib/angular-route.js"></script>
+  <script src="/lib/angular-cookies.js"></script>
+  <script src="/lib/underscore.js"></script>
+  <script src="/lib/Promise.js"></script>
+
+  <script src="/app.js"></script>
+  <script src="/js/controllers/LoginCtrl.js"></script>
+  <script src="/js/model/Auth.js"></script>
+  <script src="/js/model/Config.js"></script>
+  <script src="/js/model/Cookie.js"></script>
+  <script src="/js/model/User.js"></script>
+</body>
+</html>
